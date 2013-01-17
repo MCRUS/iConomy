@@ -27,7 +27,7 @@ public class Help extends Handler {
         Messaging.send(sender, "`w ");
         Messaging.send(sender, "`w iConomy (`y" + Constants.Nodes.CodeName.toString() + "`w)");
         Messaging.send(sender, "`w ");
-        Messaging.send(sender, "`S [] `wRequired, `S() `sOptional");
+        Messaging.send(sender, "`S [] `wОбязательный параметр, `S() `sОпциональный параметр");
         Messaging.send(sender, "`w ");
 
         for (String action : plugin.Commands.getHelp().keySet()) {

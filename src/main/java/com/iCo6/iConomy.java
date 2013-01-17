@@ -99,7 +99,7 @@ public class iConomy extends JavaPlugin {
             Server = getServer();
 
             if(getServer().getServerName().equalsIgnoreCase("craftbukkit")) {
-                TerminalSupport = ((CraftServer)getServer()).getReader().getTerminal().isANSISupported();
+                TerminalSupport = ((CraftServer)getServer()).getReader().getTerminal().isAnsiSupported();
             }
 
             // Get general plugin information
@@ -120,7 +120,7 @@ public class iConomy extends JavaPlugin {
 
             // Upgrade Template to 6.0.9b
             LinkedHashMap<String, String> nodes = new LinkedHashMap<String, String>();
-            nodes.put("top.opening", "<green>-----[ <white>Wealthiest Accounts <green>]-----");
+            nodes.put("top.opening", "<green>-----[ <white>Богатейшие игроки <green>]-----");
             nodes.put("top.item", "<gray>+i. <green>+name <gray>- <white>+amount");
 
             try {
@@ -153,53 +153,53 @@ public class iConomy extends JavaPlugin {
             Commands.add("/money +name", new Money(this));
             Commands.setPermission("money", "iConomy.holdings");
             Commands.setPermission("money+", "iConomy.holdings.others");
-            Commands.setHelp("money", new String[] { "", "Check your balance." });
-            Commands.setHelp("money+", new String[] { " [name]", "Check others balance." });
+            Commands.setHelp("money", new String[] { "", "Выводит Ваш баланс." });
+            Commands.setHelp("money+", new String[] { " [игрок]", "Выводит баланс заданого игрока." });
 
             Commands.add("/money -h|?|help +command", new Help(this));
             Commands.setPermission("help", "iConomy.help");
-            Commands.setHelp("help", new String[] { " (command)", "For Help & Information." });
+            Commands.setHelp("help", new String[] { " (команда)", "Вывод спавку." });
 
             Commands.add("/money -t|top", new Top(this));
             Commands.setPermission("top", "iConomy.top");
-            Commands.setHelp("top", new String[] { "", "View top economical accounts." });
+            Commands.setHelp("top", new String[] { "", "Выводит список богайтеших игроков." });
 
             Commands.add("/money -p|pay +name +amount:empty", new Payment(this));
             Commands.setPermission("pay", "iConomy.payment");
-            Commands.setHelp("pay", new String[] { " [name] [amount]", "Send money to others." });
+            Commands.setHelp("pay", new String[] { " [игрок] [количество]", "Переводит деньги указанному игроку." });
 
             Commands.add("/money -c|create +name", new Create(this));
             Commands.setPermission("create", "iConomy.accounts.create");
-            Commands.setHelp("create", new String[] { " [name]", "Create an account." });
+            Commands.setHelp("create", new String[] { " [игрок]", "Создает аккаунт." });
 
             Commands.add("/money -r|remove +name", new Remove(this));
             Commands.setPermission("remove", "iConomy.accounts.remove");
-            Commands.setHelp("remove", new String[] { " [name]", "Remove an account." });
+            Commands.setHelp("remove", new String[] { " [игрок]", "Удаляет аккаунт." });
 
             Commands.add("/money -g|give +name +amount:empty", new Give(this));
             Commands.setPermission("give", "iConomy.accounts.give");
-            Commands.setHelp("give", new String[] { " [name] [amount]", "Give money." });
+            Commands.setHelp("give", new String[] { " [игрок] [количество]", "Пополняет баланс заданого игрока." });
 
             Commands.add("/money -t|take +name +amount:empty", new Take(this));
             Commands.setPermission("take", "iConomy.accounts.take");
-            Commands.setHelp("take", new String[] { " [name] [amount]", "Take money." });
+            Commands.setHelp("take", new String[] { " [игрок] [количество]", "Снимает деньги с баланса заданого игрока." });
 
             Commands.add("/money -s|set +name +amount:empty", new Set(this));
             Commands.setPermission("set", "iConomy.accounts.set");
-            Commands.setHelp("set", new String[] { " [name] [amount]", "Set account balance." });
+            Commands.setHelp("set", new String[] { " [игрок] [количество]", "Устанвливает баланс заданого игрока." });
 
             Commands.add("/money -u|status +name +status:empty", new Status(this));
             Commands.setPermission("status", "iConomy.accounts.status");
             Commands.setPermission("status+", "iConomy.accounts.status.set");
-            Commands.setHelp("status", new String[] { " [name] (status)", "Check/Set account status." });
+            Commands.setHelp("status", new String[] { " [игрок] (статус)", "Проверяет/Устанавливает статус аккаунта." });
 
             Commands.add("/money -x|purge", new Purge(this));
             Commands.setPermission("purge", "iConomy.accounts.purge");
-            Commands.setHelp("purge", new String[] { "", "Purge all accounts with initial holdings." });
+            Commands.setHelp("purge", new String[] { "", "Сбрасывает балансы всех аккаунтов на первоначальное значение." });
 
             Commands.add("/money -e|empty", new Empty(this));
             Commands.setPermission("empty", "iConomy.accounts.empty");
-            Commands.setHelp("empty", new String[] { "", "Empty database of accounts." });
+            Commands.setHelp("empty", new String[] { "", "Очищает базу данных." });
 
             // Setup Database.
             try {
