@@ -1,6 +1,7 @@
 package com.iCo6.handlers;
 
 import com.iCo6.Constants;
+
 import java.util.LinkedHashMap;
 
 import com.iCo6.command.Handler;
@@ -19,25 +20,25 @@ public class Help extends Handler {
 
     @Override
     public boolean perform(CommandSender sender, LinkedHashMap<String, Argument> arguments) throws InvalidUsage {
-        if(!hasPermissions(sender, "help"))
-            throw new InvalidUsage("You do not have permission to do that.");
+        if (!hasPermissions(sender, "help"))
+            throw new InvalidUsage("У Вас недостаточно прав.");
 
         // TODO: add support for checking help on single command.
 
         Messaging.send(sender, "`w ");
-        Messaging.send(sender, "`w iConomy (`y" + Constants.Nodes.CodeName.toString() + "`w)");
+        Messaging.send(sender, "`w iConomy (`y" + Constants.Nodes.CodeName.toString() + "`w) " + "Перевод " + "A" + "l" + "e" + "x" + " " + "B" + "o" + "n" + "d" + ".");
         Messaging.send(sender, "`w ");
         Messaging.send(sender, "`S [] `wОбязательный параметр, `S() `sОпциональный параметр");
         Messaging.send(sender, "`w ");
 
         for (String action : plugin.Commands.getHelp().keySet()) {
-            if(!hasPermissions(sender, action))
+            if (!hasPermissions(sender, action))
                 continue;
 
             String description = plugin.Commands.getHelp(action)[1];
             String command = "";
 
-            if(action.equalsIgnoreCase("money") || action.equalsIgnoreCase("money+"))
+            if (action.equalsIgnoreCase("money") || action.equalsIgnoreCase("money+"))
                 command = "/money `w" + plugin.Commands.getHelp(action)[0] + "`s";
             else
                 command = "/money `w" + action + plugin.Commands.getHelp(action)[0] + "`s";

@@ -49,11 +49,11 @@ personal:
     credit: "<green>Вам начислили <white>+amount"
     status: "<green>Статус аккаунта сейчас <white>+status<green>."
 player:
-    set: "<green>Баланс <white>+name <green> изменен на <white>+amount"
-    balance: "<green>Баланс +name: <white>+balance"
-    reset: "<rose>Счет <white>+name <rose>обнулен."
-    credit: "<green>Счет <white>+name <green> пополнен на <white>+amount"
-    debit: "<rose>Со счета <white>+name <rose> было списано <white>+amount"
+    set: "<green>Баланс <white>+name<green> изменен на <white>+amount"
+    balance: "<green>Баланс +name:<white> +balance"
+    reset: "<rose>Счет <white>+name<rose> обнулен."
+    credit: "<green>Счет <white>+name<green> пополнен на <white>+amount"
+    debit: "<rose>Со счета <white>+name<rose> было списано <white>+amount"
     status: "<white>+name's <green>статус аккаунта <white>+status<green>."
 payment:
     self: "<rose>К сожалению, самому себе деньги пересылать бессмысленно."

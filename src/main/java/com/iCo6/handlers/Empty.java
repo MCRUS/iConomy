@@ -25,7 +25,7 @@ public class Empty extends Handler {
     @Override
     public boolean perform(CommandSender sender, LinkedHashMap<String, Argument> arguments) throws InvalidUsage {
         if(!hasPermissions(sender, "empty"))
-            throw new InvalidUsage("You do not have permission to do that.");
+            throw new InvalidUsage("У Вас недостаточно прав.");
 
         Accounts.empty();
 

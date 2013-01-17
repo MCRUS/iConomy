@@ -25,7 +25,7 @@ public class Status extends Handler {
     @Override
     public boolean perform(CommandSender sender, LinkedHashMap<String, Argument> arguments) throws InvalidUsage {
         if(!hasPermissions(sender, "status"))
-            throw new InvalidUsage("You do not have permission to do that.");
+            throw new InvalidUsage("У Вас недостаточно прав.");
 
         String name = arguments.get("name").getStringValue();
         String tag = template.color(Template.Node.TAG_MONEY);
@@ -36,7 +36,7 @@ public class Status extends Handler {
                 self = true;
 
         if(name.equals("0"))
-            throw new InvalidUsage("Missing <white>name<rose>: /money status <name> (new status)");
+            throw new InvalidUsage("Параметр <white>игрок<rose> не найден: /money status <игрок> (новый статус)");
 
         if(!Accounts.exists(name)) {
             template.set(Template.Node.ERROR_ACCOUNT);
@@ -63,7 +63,7 @@ public class Status extends Handler {
 
         } else {
             if(!hasPermissions(sender, "status+"))
-                throw new InvalidUsage("You do not have permission to do that.");
+                throw new InvalidUsage("У Вас недостаточно прав.");
 
             int status = arguments.get("status").getIntegerValue();
             account.setStatus(status);

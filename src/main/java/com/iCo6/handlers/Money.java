@@ -27,14 +27,14 @@ public class Money extends Handler {
     public boolean perform(CommandSender sender, LinkedHashMap<String, Argument> arguments) throws InvalidUsage {
         if(Constants.Nodes.useHoldingsPermission.getBoolean())
             if(!hasPermissions(sender, "money"))
-                throw new InvalidUsage("You do not have permission to do that.");
+                throw new InvalidUsage("У Вас недостаточно прав.");
 
         String name = arguments.get("name").getStringValue();
         String tag = template.color(Template.Node.TAG_MONEY);
 
         if(name.equals("0")) {
             if(isConsole(sender)) {
-                Messaging.send(sender, "`rCannot check money on non-living organism.");
+                Messaging.send(sender, "`rНелья узнать баланс консоли.");
                 return false;
             }
 
@@ -49,7 +49,7 @@ public class Money extends Handler {
         }
 
         if(!hasPermissions(sender, "money+"))
-            throw new InvalidUsage("You do not have permission to do that.");
+            throw new InvalidUsage("У Вас недостаточно прав.");
 
         if(!Accounts.exists(name)) {
             template.set(Template.Node.ERROR_ACCOUNT);

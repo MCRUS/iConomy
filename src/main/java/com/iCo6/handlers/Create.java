@@ -25,13 +25,13 @@ public class Create extends Handler {
     @Override
     public boolean perform(CommandSender sender, LinkedHashMap<String, Argument> arguments) throws InvalidUsage {
         if(!hasPermissions(sender, "create"))
-            throw new InvalidUsage("You do not have permission to do that.");
+            throw new InvalidUsage("У Вас недостаточно прав.");
 
         String name = arguments.get("name").getStringValue();
         String tag = template.color(Template.Node.TAG_MONEY);
 
         if(name.equals("0"))
-            throw new InvalidUsage("Missing <white>name<rose>: /money create <name>");
+            throw new InvalidUsage("Параметр <white>игрок<rose> не найден: /money create <игрок>");
 
         if(Accounts.exists(name)) {
             template.set(Template.Node.ERROR_EXISTS);

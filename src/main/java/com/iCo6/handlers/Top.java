@@ -24,7 +24,7 @@ public class Top extends Handler {
     @Override
     public boolean perform(CommandSender sender, LinkedHashMap<String, Argument> arguments) throws InvalidUsage {
         if(!hasPermissions(sender, "top"))
-            throw new InvalidUsage("You do not have permission to do that.");
+            throw new InvalidUsage("У Вас недостаточно прав.");
 
         template.set(Template.Node.TOP_OPENING);
         Messaging.send(sender, template.parse());

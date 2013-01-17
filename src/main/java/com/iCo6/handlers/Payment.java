@@ -32,7 +32,7 @@ public class Payment extends Handler {
             return false;
 
         if(isConsole(sender)) {
-            Messaging.send(sender, "`rCannot remove money from a non-living organism.");
+            Messaging.send(sender, "`rВы не можете перечислять деньги с баланса консоли.");
             return false;
         }
 
@@ -42,22 +42,22 @@ public class Payment extends Handler {
         Double amount;
 
         if(name.equals("0"))
-            throw new InvalidUsage("Missing <white>name<rose>: /money pay <name> <amount>");
+            throw new InvalidUsage("Параметр <white>игрок<rose> не найден: /money pay <игрок> <количество>");
 
         if(arguments.get("amount").getStringValue().equals("empty"))
-            throw new InvalidUsage("Missing <white>amount<rose>: /money pay <name> <amount>");
+            throw new InvalidUsage("Параметр <white>количество<rose> не найден: /money pay <игрок> <количество>");
 
         try {
             amount = arguments.get("amount").getDoubleValue();
         } catch(NumberFormatException e) {
-            throw new InvalidUsage("Invalid <white>amount<rose>, must be double.");
+            throw new InvalidUsage("Параметр <white>количество<rose> задан неверно. Данный параметр может принимать только числовое значение типа double.");
         }
 
         if(Double.isInfinite(amount) || Double.isNaN(amount))
-            throw new InvalidUsage("Invalid <white>amount<rose>, must be double.");
+            throw new InvalidUsage("Параметр <white>количество<rose> задан неверно. Данный параметр может принимать только числовое значение типа double.");
 
         if(amount < 0.1)
-            throw new InvalidUsage("Invalid <white>amount<rose>, cannot be less than 0.1");
+            throw new InvalidUsage("Параметр <white>количество<rose> задан неверно. Значение данного параметра не может быть меньше 0.1.");
 
         if(Common.matches(from.getName(), name)) {
             template.set(Template.Node.PAYMENT_SELF);
