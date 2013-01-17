@@ -10,8 +10,22 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.bukkit:bukkit:1.4.5-R0.2" level="project" />
-    <orderEntry type="library" name="Maven: org.bukkit:craftbukkit:1.4.5-R0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.bukkit:bukkit:1.4.6-R0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.avaje:ebean:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:10.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.bukkit:craftbukkit:1.4.6-R0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.bukkit:minecraft-server:1.4.6" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:3.2" level="project" />
+    <orderEntry type="library" name="Maven: jline:jline:2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.fusesource.jansi:jansi:1.8" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.7.2" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.14" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.1" level="project" />
     <orderEntry type="library" name="Maven: de.bananaco:bPermissions:1.7.3" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.3.166" level="project" />
   </component>
